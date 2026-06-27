@@ -7,6 +7,7 @@ package wildfire;
  *   FOREST   - tree, CAN catch fire
  *   BURNING  - currently on fire (counts down burnTicks)
  *   BURNED   - burned out / ash, fire is done here
+ *   enum is like a list
  */
 public enum TileState {
     GRASS,

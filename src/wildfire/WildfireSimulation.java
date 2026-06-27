@@ -108,12 +108,12 @@ public class WildfireSimulation {
         // Clamp K: can't ignite more tiles than we have forest
         int ignitions = Math.min(config.K, forestTiles.size());
 
-        // Shuffle and pick the first `ignitions` tiles
+        // Shuffle and pick the first ignitions tiles
         Collections.shuffle(forestTiles, rng);
         for (int i = 0; i < ignitions; i++) {
             int r = forestTiles.get(i)[0];
             int c = forestTiles.get(i)[1];
-            grid[r][c]      = TileState.BURNING;
+            grid[r][c] = TileState.BURNING;
             burnTimer[r][c] = 1;
         }
 
@@ -145,7 +145,7 @@ public class WildfireSimulation {
      *   2. Advance burn timers; tiles that finish burning become BURNED.
      */
     private void doTick() {
-        // We need a separate "next state" grid so that changes in this tick
+        // A separate "next state" grid so that changes in this tick
         // don't immediately affect the same tick's spread calculation.
         // (We update burnTimer in-place since it's only read by the "did it burn out?" check.)
 
@@ -155,7 +155,7 @@ public class WildfireSimulation {
         for (int r = 0; r < config.N; r++) {
             for (int c = 0; c < config.M; c++) {
                 if (grid[r][c] == TileState.BURNING) {
-                    // Look at all 8 neighbors (diagonals included)
+                    // Look at all 8 neighbors
                     for (int dr = -1; dr <= 1; dr++) {
                         for (int dc = -1; dc <= 1; dc++) {
                             if (dr == 0 && dc == 0) continue; // skip self
@@ -184,17 +184,17 @@ public class WildfireSimulation {
             for (int c = 0; c < config.M; c++) {
 
                 if (shouldIgnite[r][c]) {
-                    // New fire!
-                    grid[r][c]      = TileState.BURNING;
+                    // New fire
+                    grid[r][c] = TileState.BURNING;
                     burnTimer[r][c] = 1;
 
                 } else if (grid[r][c] == TileState.BURNING) {
-                    // Already burning â€” advance timer
+                    // Already burning 
                     burnTimer[r][c]++;
 
                     // If burned long enough, it turns to ash
                     if (burnTimer[r][c] > config.burnTicks) {
-                        grid[r][c]      = TileState.BURNED;
+                        grid[r][c] = TileState.BURNED;
                         burnTimer[r][c] = 0;
                     }
                 }
