@@ -2,7 +2,7 @@ package wildfire;
 
 /**
  * Wildfire Simulation - Sequential Version
- * Entry point of the program.
+ * 
  */
 public class Main {
 

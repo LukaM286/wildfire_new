@@ -6,10 +6,10 @@ import java.util.List;
 import java.util.Random;
 
 /**
- * The heart of the simulation.
+ * 
  *
  * Holds the grid and runs the tick-by-tick fire spreading logic.
- * Everything here is sequential (single-threaded), nice and simple.
+ * Everything here is sequential (single-threaded)
  */
 public class WildfireSimulation {
 
@@ -41,9 +41,9 @@ public class WildfireSimulation {
         }
     }
 
-    // ----------------------------------------------------------------
+    // 
     // STEP 1: Generate the forest using a random walk
-    // ----------------------------------------------------------------
+    // 
 
     /**
      * Walks randomly across the grid, marking tiles as FOREST.
@@ -87,9 +87,9 @@ public class WildfireSimulation {
             forestCount, 100.0 * forestCount / totalTiles);
     }
 
-    // ----------------------------------------------------------------
+    // 
     // STEP 2: Start the fire at K random forest tiles
-    // ----------------------------------------------------------------
+    // 
 
     /**
      * Picks K random FOREST tiles and sets them on FIRE.
@@ -120,9 +120,9 @@ public class WildfireSimulation {
         System.out.printf("Fire started at %d tiles%n", ignitions);
     }
 
-    // ----------------------------------------------------------------
+    // 
     // STEP 3: Run the simulation
-    // ----------------------------------------------------------------
+    // 
 
     /**
      * Runs tick by tick until no tile is burning anymore.
@@ -214,9 +214,9 @@ public class WildfireSimulation {
         return false;
     }
 
-    // ----------------------------------------------------------------
+    // 
     // Getters (used by the visualizer)
-    // ----------------------------------------------------------------
+    // 
 
     public TileState[][] getGrid()    { return grid; }
     public SimConfig     getConfig()  { return config; }

@@ -6,7 +6,7 @@ import java.awt.*;
 /**
  * Draws the simulation grid in a window.
  *
- * Uses Java Swing (built-in, no extra libraries needed).
+ * 
  * Each grid cell is drawn as a colored rectangle.
  *
  * Color legend:
@@ -61,9 +61,9 @@ public class SimVisualizer extends JFrame {
         }
     }
 
-    // ----------------------------------------------------------------
+    // 
     // Inner panel that does the actual drawing
-    // ----------------------------------------------------------------
+    // 
 
     private class GridPanel extends JPanel {
 
