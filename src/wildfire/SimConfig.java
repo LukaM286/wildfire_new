@@ -2,7 +2,7 @@ package wildfire;
 
 /**
  * Holds all simulation parameters.
- * Think of this as a simple container (a "record") for our settings.
+ * 
  */
 public class SimConfig {
     public final int N;           // number of rows
