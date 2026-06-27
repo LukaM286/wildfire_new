@@ -189,7 +189,7 @@ public class WildfireSimulation {
                     burnTimer[r][c] = 1;
 
                 } else if (grid[r][c] == TileState.BURNING) {
-                    // Already burning — advance timer
+                    // Already burning â€” advance timer
                     burnTimer[r][c]++;
 
                     // If burned long enough, it turns to ash
