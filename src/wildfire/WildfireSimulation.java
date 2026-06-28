@@ -8,18 +8,18 @@ import java.util.Random;
 /**
  * 
  *
- * Holds the grid and runs the tick-by-tick fire spreading logic.
- * Everything here is sequential (single-threaded)
+ * 
+ * 
  */
 public class WildfireSimulation {
 
     private final SimConfig config;
     private final Random    rng;
 
-    // The grid: grid[row][col] = current state of that tile
+    // current state of that tile
     private TileState[][] grid;
 
-    // burnTimer[row][col] = how many ticks this tile has been burning
+    // burnTimer[row][col],how many ticks this tile has been burning
     // (0 if not burning)
     private int[][] burnTimer;
 
@@ -80,7 +80,7 @@ public class WildfireSimulation {
                 row = newRow;
                 col = newCol;
             }
-            // If we'd go out of bounds, we just stay put and try again next iteration
+            // If we'd go out of bounds, stay put and try again next iteration
         }
 
         System.out.printf("Forest generated: %d tiles (%.1f%%)%n",
@@ -143,11 +143,12 @@ public class WildfireSimulation {
      * One tick of the simulation:
      *   1. Check which FOREST neighbors of BURNING tiles should ignite.
      *   2. Advance burn timers; tiles that finish burning become BURNED.
+     *   check
      */
     private void doTick() {
         // A separate "next state" grid so that changes in this tick
         // don't immediately affect the same tick's spread calculation.
-        // (We update burnTimer in-place since it's only read by the "did it burn out?" check.)
+        // (Update burnTimer in-place since it's only read by the "did it burn out?" check.)
 
         boolean[][] shouldIgnite = new boolean[config.N][config.M];
 
