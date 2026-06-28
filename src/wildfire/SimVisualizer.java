@@ -54,7 +54,7 @@ public class SimVisualizer extends JFrame {
     public void repaintAndWait() {
         // Ask Swing to repaint on the EDT (Event Dispatch Thread)
         //Called after every tick from run()
-        SwingUtilities.invokeLater(gridPanel::repaint);
+        SwingUtilities.invokeLater(gridPanel::repaint); //continue simulation,dont wait
 
         try {
             Thread.sleep(FRAME_DELAY_MS);
@@ -77,7 +77,7 @@ public class SimVisualizer extends JFrame {
 
         @Override
         protected void paintComponent(Graphics g) {
-            super.paintComponent(g);
+            super.paintComponent(g); //clean frame before
 
             TileState[][] grid = sim.getGrid();
             int N = sim.getConfig().N;
