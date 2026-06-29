@@ -18,7 +18,7 @@ public class ConfigReader {
     private static final int    DEFAULT_BURN_TICKS  = 5;
 
     /**
-     * Read instructions.txt and return a SimConfig.
+     * Read instructions.txt, return a SimConfig.
      * 
      */
     public static SimConfig readConfig(String filename) {
@@ -27,7 +27,7 @@ public class ConfigReader {
         int    K          = DEFAULT_K;
         double pSpread    = DEFAULT_P_SPREAD;
         int    burnTicks  = DEFAULT_BURN_TICKS;
-        long   seed       = System.currentTimeMillis(); // random seed by default
+        long   seed       = System.currentTimeMillis(); 
 
         try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
             String line;

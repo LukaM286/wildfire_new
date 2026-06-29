@@ -42,16 +42,16 @@ public class WildfireSimulation {
     }
 
     // 
-    // STEP 1: Generate the forest using a random walk
+    // Generate the forest using a random walk
     // 
 
     /**
-     * Walks randomly across the grid, marking tiles as FOREST.
+     * Walks random across the grid, marking tiles as FOREST.
      * Keeps walking until 50% of all tiles are forest.
      */
     public void generateForest() {
         int totalTiles  = config.N * config.M;
-        int targetForest = totalTiles / 2; // 50%
+        int targetForest = totalTiles / 2; 
 
         // Start from a random tile
         int row = rng.nextInt(config.N);
@@ -88,7 +88,7 @@ public class WildfireSimulation {
     }
 
     // 
-    // STEP 2: Start the fire at K random forest tiles
+    // Start the fire at K random forest tiles
     // 
 
     /**
@@ -105,7 +105,7 @@ public class WildfireSimulation {
             }
         }
 
-        // Clamp K: can't ignite more tiles than we have forest
+        // can't ignite more tiles than we have forest
         int ignitions = Math.min(config.K, forestTiles.size());
 
         // Shuffle and pick the first ignitions tiles
@@ -121,7 +121,7 @@ public class WildfireSimulation {
     }
 
     // 
-    // STEP 3: Run the simulation
+    // Run the simulation
     // 
 
     /**
@@ -141,8 +141,8 @@ public class WildfireSimulation {
 
     /**
      * tick of the simulation:
-     *   1. Check which FOREST neighbors of BURNING tiles should ignite.
-     *   2. Advance burn timers; tiles that finish burning become BURNED.
+     * Check which FOREST neighbors of BURNING tiles should ignite.
+     * Advance burn timers; tiles that finish burning become BURNED.
      *   check
      */
     private void doTick() {
@@ -152,7 +152,7 @@ public class WildfireSimulation {
 
         boolean[][] shouldIgnite = new boolean[config.N][config.M];
 
-        // Phase 1: Decide which forest tiles catch fire this tick
+        // Decide which forest tiles catch fire this tick
         for (int r = 0; r < config.N; r++) {
             for (int c = 0; c < config.M; c++) {
                 if (grid[r][c] == TileState.BURNING) {
@@ -180,7 +180,7 @@ public class WildfireSimulation {
             }
         }
 
-        // Phase 2: Apply ignitions and advance burn timers
+        // +Apply ignitions and advance burn timers
         for (int r = 0; r < config.N; r++) {
             for (int c = 0; c < config.M; c++) {
 
@@ -193,7 +193,7 @@ public class WildfireSimulation {
                     // Already burning 
                     burnTimer[r][c]++;
 
-                    // If burned long enough, it turns to ash
+                    // If burned long enough, turns to ash
                     if (burnTimer[r][c] > config.burnTicks) {
                         grid[r][c] = TileState.BURNED;
                         burnTimer[r][c] = 0;
