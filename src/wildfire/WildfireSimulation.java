@@ -216,7 +216,7 @@ public class WildfireSimulation {
     }
 
     // 
-    // Getters (used by the visualizer)
+    // Getters (used by the visualizer),private
     // 
 
     public TileState[][] getGrid()    { return grid; }
