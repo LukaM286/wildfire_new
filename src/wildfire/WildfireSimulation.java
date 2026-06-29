@@ -23,7 +23,7 @@ public class WildfireSimulation {
     // (0 if not burning)
     private int[][] burnTimer;
 
-    // Current simulation tick
+    // Current tick
     private int tick;
 
     public WildfireSimulation(SimConfig config) {
@@ -80,7 +80,7 @@ public class WildfireSimulation {
                 row = newRow;
                 col = newCol;
             }
-            // If we'd go out of bounds, stay put and try again next iteration
+            // If  out of bounds, stay put and try again next iteration
         }
 
         System.out.printf("Forest generated: %d tiles (%.1f%%)%n",
@@ -125,8 +125,8 @@ public class WildfireSimulation {
     // 
 
     /**
-     * Runs tick by tick until no tile is burning anymore.
-     * After each tick, calls the visualizer to redraw the screen.
+     * Run tick by tick until no tile is burning anymore.
+     * After each tick, call the visualizer to redraw the screen.
      */
     public void run(SimVisualizer visualizer) {
         while (hasBurningTile()) {

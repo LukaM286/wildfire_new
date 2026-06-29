@@ -5,12 +5,12 @@ import java.io.FileReader;
 import java.io.IOException;
 
 /**
- * Reads simulation configuration from a text file.
- * If anything is missing, we fall back to safe default values.
+ * 
+ * 
  */
 public class ConfigReader {
 
-    // Default values (used when a line is missing from instructions.txt)
+    // Default values
     private static final int    DEFAULT_N           = 100;
     private static final int    DEFAULT_M           = 100;
     private static final int    DEFAULT_K           = 10;
@@ -19,7 +19,7 @@ public class ConfigReader {
 
     /**
      * Reads instructions.txt and returns a SimConfig.
-     * The file format is one value per line: N, M, K, pSpread, burnTicks, seed
+     * 
      */
     public static SimConfig readConfig(String filename) {
         int    N          = DEFAULT_N;

@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * Draw the simulation grid in a window.
+ * 
  *
  * 
  * Each grid cell is drawn as a colored rectangle.
@@ -12,18 +12,18 @@ import java.awt.*;
  * Color legend:
  *   Tan/Yellow  = GRASS (open land)
  *   Dark Green  = FOREST (trees)
- *   Orange/Red  = BURNING (fire!)
+ *   Orange/Red  = BURNING (fire)
  *   Dark Gray   = BURNED (ash)
  */
 public class SimVisualizer extends JFrame {
 
-    // How many pixels wide/tall each grid cell is
+    
     private static final int CELL_SIZE = 6;
 
-    // Delay between frames in milliseconds 
+    
     private static final int FRAME_DELAY_MS = 100;
 
-    // Colors for each tile state
+    
     private static final Color COLOR_GRASS   = new Color(210, 190, 140); 
     private static final Color COLOR_FOREST  = new Color( 34, 100,  34); 
     private static final Color COLOR_BURNING = new Color(230,  70,  10); 
@@ -48,7 +48,7 @@ public class SimVisualizer extends JFrame {
     }
 
     /**
-     * Redraws the grid and waits a short time so animation can be seen
+     * Redraw the grid and wait a short time so animation can be seen
      */
     
     public void repaintAndWait() {
@@ -64,7 +64,7 @@ public class SimVisualizer extends JFrame {
     }
 
     // 
-    // Inner panel that does the actual drawing
+    // actual drawing
     // 
 
     private class GridPanel extends JPanel {
@@ -91,7 +91,7 @@ public class SimVisualizer extends JFrame {
                 }
             }
 
-            // Draw tick counter at the bottom
+            // Draw tick counter at the bottom, testing
             g.setColor(Color.WHITE);
             g.setFont(new Font("Monospaced", Font.BOLD, 13));
             g.drawString("Tick: " + sim.getTick(), 8, N * CELL_SIZE + 20);
@@ -103,7 +103,7 @@ public class SimVisualizer extends JFrame {
                 case FOREST:  return COLOR_FOREST;
                 case BURNING: return COLOR_BURNING;
                 case BURNED:  return COLOR_BURNED;
-                default:      return Color.MAGENTA; // should never happen
+                default:      return Color.MAGENTA; 
             }
         }
     }
