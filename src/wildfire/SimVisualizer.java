@@ -71,7 +71,7 @@ public class SimVisualizer extends JFrame {
 
         public GridPanel() {
             int width  = sim.getConfig().M * CELL_SIZE;
-            int height = sim.getConfig().N * CELL_SIZE + 30; // +30 for tick label
+            int height = sim.getConfig().N * CELL_SIZE + 30; 
             setPreferredSize(new Dimension(width, height));
         }
 
