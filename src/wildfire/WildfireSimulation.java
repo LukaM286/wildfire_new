@@ -105,7 +105,7 @@ public class WildfireSimulation {
             }
         }
 
-        // can't ignite more tiles than we have forest
+        // can't ignite more tiles than forest
         int ignitions = Math.min(config.K, forestTiles.size());
 
         // Shuffle and pick the first ignitions tiles
