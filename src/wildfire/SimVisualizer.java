@@ -38,7 +38,7 @@ public class SimVisualizer extends JFrame {
     }
 
     /**
-     * Redraw the grid and wait a short time so animation can be seen
+     * Redraw the grid + wait a short time so animation can be seen
      */
     
     public void repaintAndWait() {
@@ -52,10 +52,7 @@ public class SimVisualizer extends JFrame {
             Thread.currentThread().interrupt();
         }
     }
-
-    // 
-    // actual drawing
-    // 
+ 
 
     private class GridPanel extends JPanel {
 
@@ -73,7 +70,6 @@ public class SimVisualizer extends JFrame {
             int N = sim.getConfig().N;
             int M = sim.getConfig().M;
 
-            // Draw each tile
             for (int r = 0; r < N; r++) {
                 for (int c = 0; c < M; c++) {
                     g.setColor(colorFor(grid[r][c]));

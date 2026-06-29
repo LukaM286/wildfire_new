@@ -6,7 +6,7 @@ public class SimConfig {
     public final int K;           // number of fire ignition points
     public final double pSpread;  // probability a neighbor catches fire (0.0 - 1.0)
     public final int burnTicks;   // how many ticks a tile burns before it turns to ash
-    public final long seed;       // random seed (for reproducibility)
+    public final long seed;       
 
     public SimConfig(int N, int M, int K, double pSpread, int burnTicks, long seed) {
         this.N = N;

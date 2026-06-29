@@ -193,7 +193,7 @@ public class WildfireSimulation {
                     // Already burning 
                     burnTimer[r][c]++;
 
-                    // If burned long enough, turns to ash
+                    // If burned long enough, turn to ash
                     if (burnTimer[r][c] > config.burnTicks) {
                         grid[r][c] = TileState.BURNED;
                         burnTimer[r][c] = 0;
