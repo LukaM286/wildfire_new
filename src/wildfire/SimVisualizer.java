@@ -52,12 +52,12 @@ public class SimVisualizer extends JFrame {
      */
     
     public void repaintAndWait() {
-        // Ask Swing to repaint on the EDT (Event Dispatch Thread)
+        // Ask Swing to repaint on the EDT (Event Dispatch Thread), run when you can
         //Called after every tick from run()
         SwingUtilities.invokeLater(gridPanel::repaint); //continue simulation,dont wait
 
         try {
-            Thread.sleep(FRAME_DELAY_MS);
+            Thread.sleep(FRAME_DELAY_MS); // wait to see animation
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }
