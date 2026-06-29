@@ -33,7 +33,6 @@ public class ConfigReader {
             String line;
             String[] parts;
 
-            // Try to read each line; if the line doesn't exist, keep the default
             line = reader.readLine();
             if (line != null) {
                 parts = line.trim().split("\\s+");
