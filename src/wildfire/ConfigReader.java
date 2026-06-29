@@ -18,7 +18,7 @@ public class ConfigReader {
     private static final int    DEFAULT_BURN_TICKS  = 5;
 
     /**
-     * Reads instructions.txt and returns a SimConfig.
+     * Read instructions.txt and return a SimConfig.
      * 
      */
     public static SimConfig readConfig(String filename) {

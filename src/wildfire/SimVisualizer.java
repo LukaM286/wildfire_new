@@ -4,16 +4,6 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * 
- *
- * 
- * Each grid cell is drawn as a colored rectangle.
- *
- * Color legend:
- *   Tan/Yellow  = GRASS (open land)
- *   Dark Green  = FOREST (trees)
- *   Orange/Red  = BURNING (fire)
- *   Dark Gray   = BURNED (ash)
  */
 public class SimVisualizer extends JFrame {
 

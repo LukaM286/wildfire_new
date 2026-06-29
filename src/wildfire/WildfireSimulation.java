@@ -92,7 +92,7 @@ public class WildfireSimulation {
     // 
 
     /**
-     * Picks K random FOREST tiles and sets them on FIRE.
+     * Picks K random FOREST tiles and set them on FIRE.
      */
     public void igniteRandomTiles() {
         // Collect all forest tile positions
@@ -140,7 +140,7 @@ public class WildfireSimulation {
     }
 
     /**
-     * One tick of the simulation:
+     * tick of the simulation:
      *   1. Check which FOREST neighbors of BURNING tiles should ignite.
      *   2. Advance burn timers; tiles that finish burning become BURNED.
      *   check

@@ -1,8 +1,6 @@
 package wildfire;
 
 /**
- * Every cell in the grid can be one of these four states.
- *
  *   GRASS    - cannot catch fire
  *   FOREST   - tree,  catch fire
  *   BURNING  - currently on fire (counts down burnTicks)
