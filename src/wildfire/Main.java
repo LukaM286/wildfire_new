@@ -9,8 +9,10 @@ public class Main {
         sim.generateForest();
         sim.igniteRandomTiles();
 
+        SimVisualizer visualizer = new SimVisualizer(sim);
+
         long startTime = System.currentTimeMillis();
-        sim.run(null);
+        sim.run(visualizer);
         long endTime = System.currentTimeMillis();
 
         System.out.println("Simulation finished!");

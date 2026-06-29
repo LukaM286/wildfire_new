@@ -20,8 +20,8 @@ public class SimVisualizer extends JFrame {
     // How many pixels wide/tall each grid cell is
     private static final int CELL_SIZE = 6;
 
-    // Delay between frames in milliseconds (lower = faster simulation)
-    private static final int FRAME_DELAY_MS = 30;
+    // Delay between frames in milliseconds 
+    private static final int FRAME_DELAY_MS = 100;
 
     // Colors for each tile state
     private static final Color COLOR_GRASS   = new Color(210, 190, 140); 
