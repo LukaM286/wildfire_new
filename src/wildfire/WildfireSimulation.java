@@ -54,7 +54,7 @@ public class WildfireSimulation {
         int targetForest = totalTiles / 2; 
 
         // Start from a random tile
-        int row = rng.nextInt(config.N);
+        int row = rng.nextInt(config.N); //med 0 in config.N izključno
         int col = rng.nextInt(config.M);
 
         int forestCount = 0;
@@ -71,7 +71,7 @@ public class WildfireSimulation {
             }
 
             // Pick a random direction to step
-            int dir = rng.nextInt(4);
+            int dir = rng.nextInt(4); //choose index between 0-3 from this dRow = {-1, 1, 0, 0};
             int newRow = row + dRow[dir];
             int newCol = col + dCol[dir];
 

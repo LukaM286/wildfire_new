@@ -2,7 +2,7 @@ package wildfire;
 
 public class Main {
     public static void main(String[] args) {
-        SimConfig config = ConfigReader.readConfig("instructions.txt");
+        SimConfig config = ConfigReader.readConfig("instructions.txt"); //klic statične metode
         System.out.println("Config loaded: " + config);
 
         WildfireSimulation sim = new WildfireSimulation(config);

@@ -44,6 +44,7 @@ public class SimVisualizer extends JFrame {
     public void repaintAndWait() {
         //repaint on the EDT (Event Dispatch Thread), run when you can
         //Called after every tick from run()
+        //swing demands edt for drawing, separate thread
         SwingUtilities.invokeLater(gridPanel::repaint); //continue simulation,dont wait
 
         try {
