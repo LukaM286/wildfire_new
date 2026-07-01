@@ -48,7 +48,7 @@ public class SimVisualizer extends JFrame {
         SwingUtilities.invokeLater(gridPanel::repaint); //continue simulation,dont wait
 
         try {
-            Thread.sleep(FRAME_DELAY_MS); // wait to see animation
+            Thread.sleep(FRAME_DELAY_MS); // EDT needs time, wait to see animation
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }
